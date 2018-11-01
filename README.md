@@ -6,7 +6,7 @@ The GW Libraries ArchivesSpace PUI customization files and documentation can be 
 These configurations are made to [ArchivesSpace version 2.3.2](https://github.com/archivesspace/archivesspace/releases/tag/v2.3.2)
 
 
-#1.0 release
+# 1.0 release
 1. Configurations to the core code configuration file config.rb, found at /path/to/aspace/config/config.rb. These configurations are described below.
 2. Customizations to the built-in "local" plugin, specifically its "public" directory, found at /path/to/aspace/plugins/local/public/. These customized files are located in this repo's/public/ directory, and are also described below.
 
@@ -53,7 +53,7 @@ GW uses the built-in "local" plugin to customize the public portal of ArchivesSp
 
 
 
-#Beta release
+# Beta release
 ## Customizations for this PUI are achieved by two types of edits:
 1. Configurations to the core code configuration file config.rb, found at /path/to/aspace/config/config.rb. These configurations are described below.
 2. Customizations to the built-in "local" plugin, specifically its "public" directory, found at /path/to/aspace/plugins/local/public/. These customized files are located in this repo's/public/ directory, and are also described below.
