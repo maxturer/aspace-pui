@@ -66,3 +66,8 @@ nav[aria-label="hierarchical navigation"] ul.breadcrumb:before{ /* label before 
 .breadcrumb>li+li:before { /* carrot between breadcrumb levels */
     content: "\003e\00a0";
 }
+
+/* To temporarily hide the advanced search option to limit advanced searches to digital objects (aka, online materials) */
+form#advanced_search select#limit option[value="digital_object"] {
+	display:none;
+}
