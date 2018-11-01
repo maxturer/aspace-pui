@@ -76,10 +76,10 @@ en:
 
   search-button:
     label: Search
-  search-limit: "Limit to %{limit}"
+  search-limit: "Only search %{limit}" 
   search-limiting: "limited to %{limit}"
   search-limits:
-    all: all record types
+    all: everything
     repository: repositories
     repositories: repositories
     resource: collections
