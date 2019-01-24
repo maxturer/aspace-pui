@@ -3,10 +3,10 @@
 The GW Libraries ArchivesSpace PUI customization files and documentation can be found in this repo.
 
 ## Version
-These configurations are made to [ArchivesSpace version 2.3.2](https://github.com/archivesspace/archivesspace/releases/tag/v2.3.2)
+These configurations have been tested with ArchivesSpace [version 2.3.2](https://github.com/archivesspace/archivesspace/releases/tag/v2.3.2) and [version 2.5.2](https://github.com/archivesspace/archivesspace/releases/tag/v2.5.2).
 
 
-# 1.0 release
+# Edits were made in two areas for the PUI:
 1. Configurations to the core code configuration file config.rb, found at /path/to/aspace/config/config.rb. These configurations are described below.
 2. Customizations to the built-in "local" plugin, specifically its "public" directory, found at /path/to/aspace/plugins/local/public/. These customized files are located in this repo's/public/ directory, and are also described below.
 
