@@ -1,3 +1,10 @@
+/* color variables */
+:root {
+	--gw-dark-blue: #033c5a;
+	--gw-white: #ffffff;
+	--gw-light-blue: #0073AA;
+}
+
 /* Use GW Libraries font, throughout all of PUI*/
 @font-face {
     font-family: AvenirLTStd-Roman;
@@ -15,14 +22,15 @@ body, h1, h2, h3, .h1, .h2, .h3 {
 	background-color:#004065;
 }
 #header .h1, #header .h1 a {
-	color: white;
+	color: var(--gw-white);
 	font-weight:normal;
 }
 a, a:hover {
-	color:#0073AA;
+	color: var(--gw-light-blue);
+	text-decoration: underline;
 }
 h1, .h1 {
-	color: #004065;
+	color: var(--gw-dark-blue);
 }
 
 /* GWLAI Web Team recommendation to tone down badge colors. Colors below are more subtle versions of the out-of-the-box colors. */
@@ -35,8 +43,8 @@ h1, .h1 {
 	border-color:#23ab33;
 }
 .record-type-badge.agent {
-	color:#004065;
-	border-color:#004065;
+	color: var(--gw-dark-blue);
+	border-color: var(--gw-dark-blue);
 }
 
 /* Add margin at the top of the header so that logo doesn't hit top of page, and reduce size of image so that total size of header is unaffected */
@@ -72,12 +80,14 @@ nav[aria-label="hierarchical navigation"] ul.breadcrumb:before{ /* label before 
 	margin: 1em 0;
 	background-color: #eee;
 	padding: .5em 1em;
-	border: 1px solid #ddd;
+	border: 2px solid var(--gw-dark-blue);
+}
+
+#spec_request p {
+	margin: 0;
 }
 
 /* To temporarily hide the advanced search option to limit advanced searches to digital objects (aka, online materials) */
 form#advanced_search select#limit option[value="digital_object"] {
 	display:none;
 } 
-
-
