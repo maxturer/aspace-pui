@@ -36,7 +36,7 @@ h1, .h1 {
 }
 .record-type-badge.agent {
 	color:#004065;
-	border-color:##004065;
+	border-color:#004065;
 }
 
 /* Add margin at the top of the header so that logo doesn't hit top of page, and reduce size of image so that total size of header is unaffected */
@@ -73,7 +73,6 @@ nav[aria-label="hierarchical navigation"] ul.breadcrumb:before{ /* label before 
 	background-color: #eee;
 	padding: .5em 1em;
 	border: 1px solid #ddd;
-	display: none; /* At least for now, this is overriden via JavaSciprt for certain kinds of pages where we want it to display (eventually should probably make it only output for those pages via an .erb condition or something) */
 }
 
 /* To temporarily hide the advanced search option to limit advanced searches to digital objects (aka, online materials) */
