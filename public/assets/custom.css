@@ -19,7 +19,7 @@ body, h1, h2, h3, .h1, .h2, .h3 {
 
 /* Use official GW colors in the header, throughout all of PUI*/
 #header {
-	background-color:#004065;
+	background-color: var(--gw-dark-blue);
 }
 #header .h1, #header .h1 a {
 	color: var(--gw-white);
