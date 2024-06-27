@@ -1,28 +1,97 @@
+/* color variables */
+:root {
+	--gw-dark-blue: #033c5a;
+	--gw-white: #ffffff;
+	--gw-light-blue: #0073AA;
+	--gw-dark-grey: #444;
+	--light-grey: #666;
+	--gw-hover: #a75523;
+	--gw-buff: #aa9868;
+	--gw-utility-buff: #e3dccc;
+	--gw-hover-buff: #d9d0bb;
+}
+
 /* Use GW Libraries font, throughout all of PUI*/
 @font-face {
-    font-family: AvenirLTStd-Roman;
-    src: url(/assets/fonts/AvenirNextLTPro-Regular.otf);
-}
+	font-family: "Gibson";
+	src:
+	  url("fonts/GibsonVF-Regular.woff2") format("woff2"),
+	  url("fonts/GibsonVF-Regular.woff") format("woff");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+  }
+
+/* Font specifics */
 body {
 	font-size:16px;
+	font-weight: 200;
 }
-body, h1, h2, h3, .h1, .h2, .h3 {
-	font-family:"AvenirLTStd-Roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+body,
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3,
+.identifier .id-label,
+.record-type-badge {
+	font-family:"Gibson", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* Use official GW colors in the header, throughout all of PUI*/
 #header {
-	background-color:#004065;
+	background-color: var(--gw-dark-blue);
 }
-#header .h1, #header .h1 a {
-	color: white;
+
+#header .h1,
+#header .h1 a {
+	color: var(--gw-white);
 	font-weight:normal;
 }
-a, a:hover {
-	color:#0073AA;
+a,
+a:hover {
+	text-decoration: underline;
 }
-h1, .h1 {
-	color: #004065;
+
+a {
+	color: var(--gw-light-blue);
+}
+
+a:hover {
+	color: var(--gw-hover);
+}
+
+.h1 a,
+a.nav-link,
+a.btn,
+a.accordion-toggle {
+	text-decoration: none;
+}
+
+h1,
+.h1 {
+	color: var(--gw-dark-blue);
+	font-weight: 400;
+}
+
+h2,
+h3,
+dt,
+.identifier .id-label,
+.record-type-badge,
+.recordnumber {
+	font-weight: 400;
+}
+
+span,
+span.component {
+	font-weight: 200;
+}
+
+.font-weight-bold {
+	font-weight: 400 !important;
 }
 
 /* GWLAI Web Team recommendation to tone down badge colors. Colors below are more subtle versions of the out-of-the-box colors. */
@@ -35,8 +104,8 @@ h1, .h1 {
 	border-color:#23ab33;
 }
 .record-type-badge.agent {
-	color:#004065;
-	border-color:##004065;
+	color: var(--gw-dark-blue);
+	border-color: var(--gw-dark-blue);
 }
 
 /* Add margin at the top of the header so that logo doesn't hit top of page, and reduce size of image so that total size of header is unaffected */
@@ -44,7 +113,6 @@ h1, .h1 {
 	margin-top:5px;
 	height:70px;
 }
-
 
 /* Style custom GW footer content*/
 .panel-footer {
@@ -72,13 +140,14 @@ nav[aria-label="hierarchical navigation"] ul.breadcrumb:before{ /* label before 
 	margin: 1em 0;
 	background-color: #eee;
 	padding: .5em 1em;
-	border: 1px solid #ddd;
-	display: none; /* At least for now, this is overriden via JavaSciprt for certain kinds of pages where we want it to display (eventually should probably make it only output for those pages via an .erb condition or something) */
+	border: 2px solid var(--gw-dark-blue);
+}
+
+#spec_request p {
+	margin: 0;
 }
 
 /* To temporarily hide the advanced search option to limit advanced searches to digital objects (aka, online materials) */
 form#advanced_search select#limit option[value="digital_object"] {
 	display:none;
 } 
-
-
