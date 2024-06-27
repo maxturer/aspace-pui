@@ -45,20 +45,6 @@
 	<section id="content" class="container-fluid">
 		<a name="maincontent" id="maincontent"></a>
 		<%= flash_messages %>
-		<% currentUrl = request.original_url %>
-		<% urlArray = currentUrl.split("/") %>
-		<% if urlArray[5]=='resources' %>
-			<div id="spec_request">
-				<p>
-					To request boxes, please submit the collection, series, and box number(s) via our 
-					<% if urlArray[4]=='2' %>
-						<a target="_blank" href="https://library.gwu.edu/scrc/contact">Contact form TWO</a>.
-					<% elsif urlArray[4]=='5' %>
-						<a target="_blank" href="https://library.gwu.edu/scrc/contact">Contact form FIVE</a>.
-					<% end %>
-				</p>
-			</div>
-		<% end %>
 		<%= yield %>
 	</section>
 

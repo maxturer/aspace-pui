@@ -22,6 +22,7 @@
 	font-display: swap;
   }
 
+/* Font specifics */
 body {
 	font-size:16px;
 	font-weight: 200;
@@ -79,13 +80,18 @@ h2,
 h3,
 dt,
 .identifier .id-label,
-.record-type-badge {
+.record-type-badge,
+.recordnumber {
 	font-weight: 400;
 }
 
 span,
 span.component {
 	font-weight: 200;
+}
+
+.font-weight-bold {
+	font-weight: 400 !important;
 }
 
 /* GWLAI Web Team recommendation to tone down badge colors. Colors below are more subtle versions of the out-of-the-box colors. */
@@ -107,7 +113,6 @@ span.component {
 	margin-top:5px;
 	height:70px;
 }
-
 
 /* Style custom GW footer content*/
 .panel-footer {
