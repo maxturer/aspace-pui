@@ -360,8 +360,9 @@ a.accordion-toggle {
 
 h1,
 .h1 {
+	font-size: 2rem;
 	color: var(--gw-dark-blue);
-	font-weight: 400;
+	font-weight: 200;
 }
 
 h2,
