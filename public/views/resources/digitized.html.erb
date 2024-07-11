@@ -1,0 +1,32 @@
+<a name="main" title="<%= t('internal_links.main') %>"></a>
+
+<div id="main-content" class="page-container">
+
+    <div id="sidebar" class="col-sm-4 col-xs-12 sidebar-container">
+        <%= render partial: 'resources/sidebar', locals: {:result => @result, :props => {:full => true}} %>
+    </div>
+
+    <div class="everything-wrapper">
+        <div id="main-inventory" class="row">
+            <div class="row">
+                <%= render partial: 'shared/breadcrumbs' %>
+            </div>
+
+            <div class="row">
+                <% unless @results.blank? || @results['total_hits'] == 0 %>
+                <div class="information everything-wrapper">
+                    <% @results.records.each do |result| %>
+                        <%= render partial: 'shared/result', locals: {:result => result, :props => {:full => false}} %>
+                    <% end %>
+                </div>
+                <div id="pagination-bottom">
+                    <%= render partial: 'shared/pagination', locals: {:pager  => @pager}  %>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<%= render partial: 'shared/modal_actions' %>

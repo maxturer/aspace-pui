@@ -1,46 +1,21 @@
 <a name="main" title="<%= t('internal_links.main') %>"></a>
 <div id="main-content" class="objects">
-  <% currentUrl = request.original_url %>
-  <% urlArray = currentUrl.split("/") %>
-  <% if urlArray[5]=='archival_objects' %>
-    <div id="alert-row" class="col-12">
-		<% if urlArray[4]=='2' %>
-            <div id="spec_request">
-                <p>To request boxes, please submit the collection, series, and box number(s) via the Special Collection Research Center's <a target="_blank" href="https://library.gwu.edu/scrc/contact">Contact form</a>.</p>
-			</div>
-        <% elsif urlArray[4]=='3' %>
-            <div id="spec_request">
-                <p>To request boxes, please contact the <a target="_blank" href="https://library.gwu.edu/grc">Global Resources Center</a>.</p>
-            </div>
-		<% end %>
-    </div>
-  <% end %>
-  <div class="d-flex" id="info_row">
-    <div class="information flex-grow-1">
-      <%= render partial: 'shared/idbadge', locals: {:result => @result, :props => { :full => true} } %>
-    </div>
-    <div class="page_actions">
-    <%= render partial: 'shared/page_actions', locals: {:record => @result, :title => @result.display_string, :url => request.fullpath, :cite => @result.cite } %>
-    </div>
-  </div>
 
-  <section class="row">
-    <div class="information w-100">
-      <%= render partial: 'shared/breadcrumbs' %>
-    </div>
-  </section>
+  <div class="page-container">
 
-  <div class="row" id="notes_row">
-   <div class="col-sm-9">
-    <% if  defined?(comp_id) && !comp_id && !@result['json']['ref_id'].blank? %>
-      <span class='ref_id'>[<%=  t('archival_object._public.header.ref_id') %>: <%= @result['json']['ref_id'] %>]</span>
-    <% end %>
-    <%= render partial: 'shared/digital', locals: {:dig_objs => @dig, record: @result} %>
-    <%= render partial: 'shared/record_innards' %>
-   </div>
+    <div id="sidebar" class="sidebar sidebar-container col-sm-4">
+      <div id="info_row" class="sidebar-information">
+        <div class="d-flex">
+          <div class="record-sidebar-title information flex-grow-1">
+            <%= render partial: 'shared/idbadge', locals: {:result => @result, :props => { :full => true} } %>
+          </div>
+          <div class="page_actions">
+          <%= render partial: 'shared/page_actions', locals: {:record => @result, :title => @result.display_string, :url => request.fullpath, :cite => @result.cite } %>
+          </div>
+        </div>
+      </div>
 
-   <% if !@result.instance_of?(DigitalObject) || @has_children %>
-    <div id="sidebar" class="sidebar sidebar-container col-sm-3 resizable-sidebar">
+      <% if !@result.instance_of?(DigitalObject) || @has_children %>
       <%
         if @result.kind_of?(DigitalObject)
           heading_text = t('dig_cont_arr')
@@ -53,8 +28,42 @@
         <%= render partial: 'shared/search_collection_form', :locals => {:resource_uri => @result.resource_uri, :action_text => "#{t('actions.search_in', :type => t('resource._singular'))}"} %>
       <% end %>
       <%= render partial: 'shared/children_tree', :locals => {:heading_text => heading_text, :root_node_uri => @result.root_node_uri, :current_node_uri => @result.uri} %>
+     <% end %>
     </div>
-   <% end %>
+
+  <div class="row right-side">
+    <div class="everything-wrapper">
+      <section class="row">
+        <div class="information w-100">
+          <%= render partial: 'shared/breadcrumbs' %>
+        </div>
+      </section>
+
+      <% currentUrl = request.original_url %>
+      <% urlArray = currentUrl.split("/") %>
+      <% if urlArray[5]=='archival_objects' %>
+        <div id="alert-row" class="col-12">
+        <% if urlArray[4]=='5' %>
+                <div id="spec_request">
+                    <p>To request boxes, please submit the collection, series, and box number(s) via the Special Collection Research Center's <a target="_blank" href="https://library.gwu.edu/scrc/contact">Contact form</a>.</p>
+          </div>
+            <% elsif urlArray[4]=='3' %>
+                <div id="spec_request">
+                    <p>To request boxes, please contact the <a target="_blank" href="https://library.gwu.edu/grc">Global Resources Center</a>.</p>
+                </div>
+        <% end %>
+        </div>
+      <% end %>
+
+      <div class="row" id="notes_row">
+        <div class="col">
+          <% if  defined?(comp_id) && !comp_id && !@result['json']['ref_id'].blank? %>
+            <span class='ref_id'>[<%=  t('archival_object._public.header.ref_id') %>: <%= @result['json']['ref_id'] %>]</span>
+          <% end %>
+          <%= render partial: 'shared/record_innards' %>
+        </div>
+      </div>
+    </div>
   </div>
- <%= render partial: 'shared/modal_actions' %>
+   <%= render partial: 'shared/modal_actions' %>
 </div>

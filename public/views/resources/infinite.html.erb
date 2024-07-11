@@ -1,0 +1,38 @@
+<a name="main" title="<%= t('internal_links.main') %>"></a>
+
+<%= javascript_include_tag 'tree_renderer' %>
+
+<div id="main-content" class="row">
+  <div id="sidebar" class="resources-sidebar col-xs-12 col-sm-4">
+    <%= render partial: 'resources/sidebar', locals: {:result => @result, :props => {:full => true, :sidebar_tree => false}} %>
+  </div>
+
+  <div class="resources-content col-xs-12 col-sm-8">
+    <h2><%= t('actions.hierarch') %></h2>
+    <p class="resources-infinite-text"><%= t('messages.infinite_text') %></p>
+    <div class="infinite-tree-view largetree-container" id="resource-tree-container"></div>
+  </div>
+</div>
+
+<script>
+  var root_uri = "<%= app_prefix(@result.uri) %>";
+  var base_url = "<%= url_for(:action => :show) %>";
+  var should_link_to_record = true;
+
+  let infiniteScrollOverride = new SimpleRenderer(should_link_to_record);
+  infiniteScrollOverride.nodeTemplate = $('<div class="table-row"> ' +
+                            '  <div class="table-cell title"><button class="expandme" aria-expanded="false" style="float: left;"><i class="expandme-icon glyphicon glyphicon-chevron-right" /></button></div>' +
+                            '</div>');
+  
+  var tree = new LargeTreeReplacement(new TreeDataSource(root_uri + '/tree'),
+    $('#resource-tree-container'),
+    root_uri,
+    true,
+    infiniteScrollOverride,
+    function() {
+      var tree_id = TreeIds.uri_to_tree_id('<%= @result.uri %>');
+    }
+  );
+</script>
+
+<%= render partial: 'shared/modal_actions' %>

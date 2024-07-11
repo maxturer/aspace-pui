@@ -1,8 +1,18 @@
-<section  id="header">
-  <div class="row">
-    <div class="col-sm-9 h1">
-        <a title="<%=t('brand.title_link_text') %>" href="<%= AppConfig[:public_proxy_url] %>"> <%= t('brand.title') %></a>
-	</div>
-    <div class="col-sm-3 hidden-xs"><a href="https://library.gwu.edu"><img class="logo" src="<%= asset_url(AppConfig[:pui_branding_img]) %>" alt="" /></a></div>
+<section id="header">
+  <div class="container">
+    <div class="header-wrap">
+      <div class="header-logo">
+        <a href="<%= AppConfig[:public_proxy_url] %>"><img src="<%= asset_url(AppConfig[:pui_branding_img]) %>" alt="" /></a>
+      </div>
+
+      <div class="site-name">
+          <div class="title-wrap">
+            <a title="<%=t('brand.title_link_text') %>" href="<%= AppConfig[:public_proxy_url] %>"> <%= t('brand.title') %></a>
+          </div>
+          <div id="subtitle-wrap">
+            <span id="subtitle"><%= t('brand.subtitle').try(:html_safe) %></span>
+          </div>
+      </div>
+    </div>
   </div>
 </section>
