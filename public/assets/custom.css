@@ -204,19 +204,16 @@ ul {
 	padding-bottom: 2rem;
 }
 
-#footer-lower .footer-links,
-#footer-lower .footer-text {
+#footer-lower .footer-links {
 	text-align: right;
 	color: var(--gw-white);
 }
 
-#footer-lower .footer-links a,
-#footer-lower .footer-text a {
+#footer-lower .footer-links a {
 	color: var(--gw-white);
 }
 
-#footer-lower .footer-links a:hover,
-#footer-lower .footer-text a:hover {
+#footer-lower .footer-links a:hover {
 	color: var(--gw-white);
 }
 
@@ -230,12 +227,6 @@ ul {
 	padding: 0.4rem 0.2rem;
 	display: inline-block;
 }
-
-#footer-lower .footer-text p {
-	margin: 0.375em 0;
-	padding: 0.2rem;
-}
-
 
 /* buttons */
 .btn {
@@ -660,7 +651,7 @@ div.everything-wrapper a.page-link {
 
 	#footer-lower ul,
 	.footer-img #main-logo,
-	#footer-lower .footer-text {
+	#footer-lower {
 		text-align: center;
 	}
 
