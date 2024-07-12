@@ -264,7 +264,9 @@ ul {
 .btn:hover,
 .btn:focus,
 .plusminus .btn.btn-light.border:hover,
-.plusminus .btn.btn-light.border:focus {
+.plusminus .btn.btn-light.border:focus,
+#submit_search:hover,
+#submit_search:focus {
 	border: 2px solid var(--gw-hover-buff);
 	color: var(--gw-dark-blue);
 	background-color: var(--gw-hover-buff);
