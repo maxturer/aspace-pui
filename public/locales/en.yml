@@ -22,11 +22,14 @@
 en:
   brand:
     title: GW Libraries Archival Collection Guides
+    subtitle: A service of <a href="https://library.gwu.edu/">GW Libraries and Academic Innovation</a>
     title_link_text: Return to the homepage
     home: Home
     welcome_head: Archival Collection Guides
     welcome_message: |
-                     <p>Use this database to search across GW Libraries' archival collection. These include the University Archives, Global Resources Center, Special Collection Research Center organizational records, and manuscript collections.</p><p>To request materials for on-site use, record the collection name, collection number, series number, and box number(s). You may then submit your request at our <a href="https://library.gwu.edu/scrc/contact">Contact Page</a>.</p>
+                     <p>Use this database to search across the collection guides (or finding aids) for the <a href="https://library.gwu.edu/specialized-archival-and-international-materials" target="_blank">specialized collections</a> of the GW Libraries.</p>
+                     <p>Collections described in this database are open to the GW community and the public.</p>
+                     <p><a href="https://library.gwu.edu/use-collections" target="_blank">Visiting the Special Collection Research Center</a><br><a href="https://library.gwu.edu/visiting-grc" target="_blank">Visiting the Global Resources Center</a></p>
 
     welcome_search_label: "Find what you're looking for:"
     welcome_page_title: GW Libraries Archival Collections Catalog

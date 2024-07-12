@@ -1,26 +1,27 @@
 <div class="container-fluid panel-footer">
-  <div class="row">
+	<footer id="footer-upper">
+		<div class="footer-upper-container">
 
-	<div class="col-md-4">
+			<div class="footer-block" id="logo">
+				<%= image_tag(asset_url(AppConfig[:pui_footer_img]), :alt =>"GW Libraries & Academic Innovation") %>
+			</div>
+
+	<div class="footer-block">
 	  <ul class="footer-list">
-		<li>GW Libraries</li>
-		<li>Gelman Library</li>
-		<li>2130 H Street NW</li>
-		<li>Washington, DC 20052</li>
-		<li><a href="https://library.gwu.edu/scrc/contact">Contact</a></li>
+		<p>2130 H Street NW<br/>Washington, DC 20052</p>
+		<p>202.994.6558</p>
+		<p><a href="mailto:gelman@gwu.edu">gelman@gwu.edu</a></p>
 	  </ul>
 	</div>  
   
-	<div class="col-md-4">
+	<div class="footer-block">
 	  <ul class="footer-list">
 		<li><a href="https://library.gwu.edu/scrc">Special Collections Research Center</a></li>
 		<li><a href="https://library.gwu.edu/grc">Global Resources Center</a></li>
-		<li><a href="https://library.gwu.edu/">GW Libraries</a></li>
-		<li><a href="https://lai.gwu.edu/">GW Libraries &amp; Academic Innovation</a></li>
 	  </ul>
 	</div>
 	
-	 <div class="col-md-4">
+	 <div class="footer-block">
        <ul class="footer-list">
 		<!--<li><a href="<%= AppConfig[:frontend_proxy_url] %>">Staff Interface</a></li>-->
 		<li><a href="https://archivesspace.org">ArchivesSpace</a> <%= ASConstants.VERSION %></li>
@@ -28,4 +29,35 @@
 	  </ul>
      </div>
   </div>
+	</footer>
+	<footer id="footer-lower">
+		<div class="container">
+			<div class="footer-img">
+				<div id="main-logo">
+				<%= image_tag(asset_url(AppConfig[:pui_main_img]), :alt =>"GW Libraries & Academic Innovation") %>
+				</div>
+			</div>
+			<div class="footer-wrapper">
+				<div class="footer-links">
+					<div class="field__item">
+					<ul>
+						<li><a aria-label="Campus Advisories; link opens in new window" href="https://campusadvisories.gwu.edu/?utm_medium=link&amp;utm_campaign=lai-footer&amp;utm_source=campus-advisories" rel="noopener" target="_blank">Campus Advisories</a></li>
+    					<li><a aria-label="EO/Nondiscrimination Policy; link opens in new window" href="https://compliance.gwu.edu/equal-opportunity-nondiscrimination-anti-harassment-and-non-retaliation/?utm_medium=link&amp;utm_campaign=lai-footer&amp;utm_source=EEO-nondiscrimination-policy" rel="noopener" target="_blank">EO/Nondiscrimination Policy</a></li>
+    					<li><a aria-label="Website Privacy Notice; link opens in new window" href="https://www.gwu.edu/privacy-notice/?utm_medium=link&amp;utm_campaign=lai-footer&amp;utm_source=privacy-notice" rel="noopener" target="_blank">Website Privacy Notice</a></li>
+					</ul>
+					</div>
+					<div class="field__item">
+					<ul>
+						<li><a aria-label="Contact GW; link opens in new window" href="https://www.gwu.edu/contact-gw/?utm_medium=link&amp;utm_campaign=lai-footer&amp;utm_source=contact-gw" rel="noopener" target="_blank">Contact GW</a></li>
+						<li><a aria-label="Accessibility; link opens in new window" href="https://accessibility.gwu.edu/?utm_medium=link&amp;utm_campaign=lai-footer&amp;utm_source=accessibility" rel="noopener" target="_blank">Accessibility</a></li>
+						<li><a aria-label="Terms of Use; link opens in new window" href="https://www.gwu.edu/terms-use/?utm_medium=link&amp;utm_campaign=lai-footer&amp;utm_source=terms-use" rel="noopener" target="_blank">Terms of Use</a></li>
+						<li><a aria-label="Copyright; link opens in new window" href="https://www.gwu.edu/copyright/?utm_medium=link&amp;utm_campaign=lai-footer&amp;utm_source=copyright" rel="noopener" target="_blank">Copyright</a></li>
+						<li><a aria-label="Report a Barrier to Accessibility; link opens in new window" href="https://accessibility.gwu.edu/report-barrier-accessibility?utm_medium=link&amp;utm_campaign=lai-footer&amp;utm_source=report-barrier-accessibility" target="_blank">Report a Barrier to Accessibility</a></li>
+					</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</footer>
 </div>

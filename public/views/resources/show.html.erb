@@ -1,56 +1,34 @@
 <a name="main" title="<%= t('internal_links.main') %>"></a>
-<div id="main-content" class="row">
-  <% currentUrl = request.original_url %>
-  <% urlArray = currentUrl.split("/") %>
-  <% if urlArray[5]=='resources' %>
-    <div id="alert-row" class="col-12">
-        <% if urlArray[4]=='2' %>
-            <div id="spec_request">
-                <p>To request boxes, please submit the collection, series, and box number(s) via the Special Collection Research Center's <a target="_blank" href="https://library.gwu.edu/scrc/contact">Contact form</a>.</p>
-            </div>
-        <% elsif urlArray[4]=='3' %>
-            <div id="spec_request">
-                <p>To request boxes, please contact the <a target="_blank" href="https://library.gwu.edu/grc">Global Resources Center</a>.</p>
-            </div>
-        <% end %>
-    </div>
-  <% end %>
-  <div id="info_row" class="col-12">
-    <% unless defined?(@no_statement) || !defined?(@search) %>
-      <div class="searchstatement"><%= @search[:search_statement].html_safe %></div>
-    <% end %>
-    <div class="d-flex flex-column flex-md-row">
-      <div class="information flex-grow-1">
-        <%= render partial: 'shared/idbadge', locals: {:result => @result, :props => { :full => true} } %>
+<div class="page-container">
+  <div id="sidebar" class="resources-sidebar col-xs-12 col-sm-4" <% unless @has_children %>style="display: none"<% end %>>
+    <%= render partial: 'resources/sidebar', locals: {:result => @result, :props => {:full => true}} %>
+  </div>
+  <div class="everything-wrapper">
+    <div id="main-content" class="row">
+      
+      <div class="row breadcrumbs-row">
+        <%= render partial: 'shared/breadcrumbs' %>
       </div>
-      <div class="page_actions">
-        <%= render partial: 'shared/page_actions', locals: {:record => @result, :title =>  @result.display_string, :url => request.fullpath, :cite => @result.cite } %>
-      </div>
+
+      <% currentUrl = request.original_url %>
+      <% urlArray = currentUrl.split("/") %>
+      <% if urlArray[5]=='resources' %>
+        <div id="alert-row" class="col-12">
+            <% if urlArray[4]=='2' %>
+                <div id="spec_request">
+                    <p>To request boxes, please submit the collection, series, and box number(s) via the Special Collection Research Center's <a target="_blank" href="https://library.gwu.edu/scrc/contact">Contact form</a>.</p>
+                </div>
+            <% elsif urlArray[4]=='3' %>
+                <div id="spec_request">
+                    <p>To request boxes, please contact the <a target="_blank" href="https://library.gwu.edu/grc">Global Resources Center</a>.</p>
+                </div>
+            <% end %>
+        </div>
+      <% end %>
+
+      <%= render partial: 'shared/record_innards' %>
     </div>
   </div>
-</div>
-<div class="row">
-    <%= render partial: 'shared/breadcrumbs' %>
-</div>
-
-<%= render partial: 'resources/resource_alltabs' %>
-
-<div class="row mt-5 flex-column flex-lg-row" id="notes_row">
-  <div class="col-12 col-lg-9 px-3 resizable-content-pane">
-    <%= render partial: 'shared/digital', locals: {
-      :dig_objs => @dig,
-      record: @result,
-      n_digital_objects: @n_digital_objects
-    } %>
-    <%= render partial: 'shared/record_innards' %>
-  </div>
-  <div id="sidebar" class="h-max col-12 col-lg-3 sidebar sidebar-container resizable-sidebar" <% unless @has_children %>style="display: none"<% end %>>
-    <% if defined?(@filters) && defined?(@search) %>
-    <%= render partial: 'shared/facets' %>
-   <% end %>
-   <%= render partial: 'shared/search_collection_form', :locals => {:resource_uri => @result['uri'], :action_text => "#{t('actions.search_in', :type => t('resource._singular'))}"} %>
-   <%= render partial: 'shared/children_tree', :locals => {:heading_text => t('cont_arr'), :root_node_uri => @result.uri, :current_node_uri => @result.uri} %>
- </div>
 </div>
 
 <%= render partial: 'shared/modal_actions' %>
