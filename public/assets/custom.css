@@ -647,6 +647,10 @@ div.everything-wrapper a.page-link {
 	padding-left: 0;
 }
 
+.upper-record-details > .contact_info {
+	margin-bottom: 1rem;
+}
+
 .abstract.single_note,
 .subnote {
 	margin-bottom: 1rem;
@@ -785,11 +789,22 @@ div#main-content.objects #sidebar .sidebar-information {
 }
 
 .largetree-node.indent-level-1 {
-  font-size: 1rem;
+	font-size: 1rem;
 }
 
-.largetree-container .table-cell {
-  white-space: inherit;
+.largetree-container .table-cell.title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+	height: min-content;
+	line-height: 2em;
+	width: auto;
+}
+
+.largetree-container > .table.root > .root-row > .table-cell.title a {
+	color: var(--gw-white);
+	text-decoration: none;
+	font-size: 1.15rem;
 }
 
 .largetree-container .review-record-item {
@@ -797,20 +812,16 @@ div#main-content.objects #sidebar .sidebar-information {
 }
 
 .largetree-container .table.root div.table-row:first-child {
-  background-color: #fff;
-  font-weight: 200;
+	background-color: #fff;
+	font-weight: 200;
 }
 
 .largetree-container .indentor {
-  background-color: #fff;
+	background-color: transparent;
 }
 
-.indent-level-1 .table-cell { padding-left: 20px; }
-.indent-level-2 .table-cell { padding-left: 20px; }
-.indent-level-3 .table-cell { padding-left: 40px; }
-.indent-level-4 .table-cell { padding-left: 60px; }
-.indent-level-5 .table-cell { padding-left: 80px; }
 .table-cell > button { margin-left: -20px; }
+
 
 /* subjects */
 .subject-source {
