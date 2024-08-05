@@ -24,7 +24,7 @@
 
   <% over = @result.note('abstract') %>
   <% unless over.blank? %>
-    <%= render partial: 'shared/single_note', locals: {:type => 'abstract', :note_struct => over, :heading_size => 'h3', :sub_heading_size => 'h4'} %>
+    <%= render partial: 'shared/single_note', locals: {:type => 'abstract', :note_struct => over, :heading_size => 'h3', :sub_heading_size => 'h4', :calling_partial => 'record_innards'} %>
   <% end %>
 
   <!-- display dates -->
@@ -47,7 +47,7 @@
   <% non_folder.each do |type| %>
     <% (@result.notes[type] || []).each do |note_struct| %>
       <% unless note_struct['note_text'].blank? %>
-        <%= render partial: 'shared/single_note', locals: {:type => type, :note_struct => note_struct, :heading_size => 'h3'}   %>
+        <%= render partial: 'shared/single_note', locals: {:type => type, :note_struct => note_struct, :heading_size => 'h3', :calling_partial => 'record_innards'}   %>
       <% end %>
     <% end %>
   <% end %>
@@ -94,7 +94,7 @@
   <% use_notes.each do |type| %>
     <% (@result.notes[type] || []).each do |note_struct| %>
       <% unless note_struct['note_text'].blank? %>
-        <%= render partial: 'shared/single_note', locals: {:type => type, :note_struct => note_struct, :heading_size => 'h3'}   %>
+        <%= render partial: 'shared/single_note', locals: {:type => type, :note_struct => note_struct, :heading_size => 'h3', :calling_partial => 'record_innards'}   %>
       <% end %>
     <% end %>
   <% end %>
