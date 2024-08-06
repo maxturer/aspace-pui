@@ -778,6 +778,12 @@ div#main-content.objects #sidebar .sidebar-information {
 	color: var(--gw-white);
 }
 
+.largetree-container .current td a, 
+.largetree-container .current .table-cell a {
+	color: var(--gw-white);
+	text-decoration: none;
+}
+
 .infinite-item dl.dl-horizontal dt {
 	line-height: inherit;
 }
@@ -788,6 +794,10 @@ div#main-content.objects #sidebar .sidebar-information {
 
 .largetree-node {
   font-size: .8rem;
+}
+
+.largetree-node.root-row {
+	font-size: 1.15rem;
 }
 
 .largetree-node.indent-level-1 {
@@ -803,12 +813,6 @@ div#main-content.objects #sidebar .sidebar-information {
 	width: auto;
 }
 
-.largetree-container > .table.root > .root-row > .table-cell.title a {
-	color: var(--gw-white);
-	text-decoration: none;
-	font-size: 1.15rem;
-}
-
 .largetree-container .review-record-item {
     padding: 0.5rem;
 }
@@ -820,6 +824,11 @@ div#main-content.objects #sidebar .sidebar-information {
 
 .largetree-container .indentor {
 	background-color: transparent;
+	background-image: none;
+}
+
+.fa-chevron-right::before {
+	color: var(--gw-dark-grey);
 }
 
 .table-cell > button { margin-left: -20px; }
