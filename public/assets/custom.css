@@ -479,13 +479,19 @@ nav[aria-label="hierarchical navigation"] ul.breadcrumb:before{ /* label before 
 }
 
 /* language select dropdown */
-select#language_select_dropdown {
+select#language_select_dropdown,
+select#sort {
 	background-color: var(--gw-white);
 	border: 1px solid var(--gw-dark-grey);
 	border-radius: 2px;
 	font-weight: 200;
 	padding: 0.375rem 0.75rem;
 	color: var(--gw-dark-grey);
+}
+
+
+select#sort.custom-select {
+	flex-shrink: 0.8;
 }
 
 /* To temporarily hide the advanced search option to limit advanced searches to digital objects (aka, online materials) */
