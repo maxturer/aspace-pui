@@ -272,11 +272,6 @@ ul {
 	background-color: var(--gw-hover-buff);
 }
 
-#more-btn,
-#less-btn {
-	padding: 0.2rem 0.75rem;
-}
-
 label {
 	margin-bottom: 0.1rem;
 }
@@ -553,9 +548,16 @@ dl#facets dt {
 	font-size: 1.2rem;
 }
 
-.more,
-.less {
+dl#facets dd .badge {
+	font-weight: 200;
+}
+
+.more-facets__more,
+.more-facets__less {
 	cursor: pointer;
+	border: none;
+  	background: transparent;
+  	color: var(--gw-dark-blue);
 }
 
 #pagination-search,
