@@ -248,14 +248,14 @@ ul {
 
 .btn.btn-lightblue,
 .btn.btn-primary,
+.btn.btn-default,
 .plusminus .btn.btn-light.border {
 	border: 2px solid var(--gw-light-blue);
 	color: var(--gw-white);
 	background-color: var(--gw-light-blue);
 }
 
-.btn.btn-outline-darkblue,
-.btn.btn-default {
+.btn.btn-outline-darkblue {
 	border: 2px solid var(--gw-dark-blue);
 	color: var(--gw-dark-blue);
 	background-color: var(--gw-white);
@@ -273,6 +273,7 @@ ul {
 }
 
 label {
+	font-weight: 400;
 	margin-bottom: 0.1rem;
 }
 
@@ -286,6 +287,40 @@ input#submit_search.btn {
 
 .search_row.align-items-end {
 	justify-content: end;
+}
+
+.row.search_row {
+	display: flex;
+	align-items: baseline;
+}
+
+form#advanced_search .plusminus button {
+	margin-bottom: 0;
+}
+
+@media screen and (max-width: 1280px) {
+	.row.search_row .form-group {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.row.search_row .form-group select#op1.form-control {
+		max-width: 100%;
+	}
+
+	.row.search_row .form-group label {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width: var(--mobile-max)) {
+	.row.search_row {
+		display: block;
+	}
+
+	form#advanced_search .plusminus button {
+		margin-bottom: 0.5rem;
+	}
 }
 
 /* Use GW Libraries font, throughout all of PUI*/
@@ -439,7 +474,9 @@ p,
 /* Style custom GW footer content*/
 .panel-footer {
     margin-top: 4em;
+	background-color: var(--gw-white);
 }
+
 .panel-footer ul.footer-list {
     list-style-type: none;
     float: left;
