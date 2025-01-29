@@ -1,18 +1,13 @@
 <section id="header">
-  <div class="container">
-    <div class="header-wrap">
-      <div class="header-logo">
-        <a href="<%= AppConfig[:public_proxy_url] %>"><img src="<%= asset_url(AppConfig[:pui_branding_img]) %>" alt="" /></a>
-      </div>
-
-      <div class="site-name">
+  <div class="d-flex row align-items-center">
+      <img class="logo" src="<%= asset_path(AppConfig[:pui_branding_img]) %>" alt="<%= AppConfig[:pui_branding_img_alt_text] %>" />
+       <div class="site-name d-none d-md-block">
           <div class="title-wrap">
-            <a title="<%=t('brand.title_link_text') %>" href="<%= AppConfig[:public_proxy_url] %>"> <%= t('brand.title') %></a>
+            <h1><a title="<%=t('brand.title_link_text') %>" href="<%= AppConfig[:public_proxy_url] %>"> <%= t('brand.title') %></a></h1>
           </div>
           <div id="subtitle-wrap">
             <span id="subtitle"><%= t('brand.subtitle').try(:html_safe) %></span>
           </div>
       </div>
-    </div>
   </div>
 </section>
