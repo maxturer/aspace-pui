@@ -55,7 +55,7 @@
         </div>
       <% end %>
 
-      <div class="row" id="notes_row">
+      <div id="notes_row">
         <div class="col">
           <% if  defined?(comp_id) && !comp_id && !@result['json']['ref_id'].blank? %>
             <span class='ref_id'>[<%=  t('archival_object._public.header.ref_id') %>: <%= @result['json']['ref_id'] %>]</span>

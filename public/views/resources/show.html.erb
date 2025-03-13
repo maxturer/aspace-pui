@@ -1,7 +1,7 @@
 <a name="main" title="<%= t('internal_links.main') %>"></a>
 <div class="page-container">
-  <div id="sidebar" class="resources-sidebar col-xs-12 col-sm-4" <% unless @has_children %>style="display: none"<% end %>>
-    <%= render partial: 'resources/sidebar', locals: {:result => @result, :props => {:full => true}} %>
+  <div id="sidebar" class="resources-sidebar col-xs-12 col-sm-4">
+    <%= render partial: 'resources/sidebar', locals: {:result => @result, :root_uri => @result.uri, :current_node_uri => @result.uri, :props => {:full => true}} %>
   </div>
   <div class="everything-wrapper">
     <div id="main-content" class="row">
