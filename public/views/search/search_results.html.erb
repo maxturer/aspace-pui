@@ -24,9 +24,9 @@
 
   <% unless defined?(@no_statement) %>
     <div class="searchstatement">
-      <div class="pull-right buttons">
-        <%= link_to I18n.t('actions.new_search'), (defined?(@new_search) ? @new_search : root_path), :class => "btn btn-lightblue" %>
-        <button class="btn btn-lightblue" id="toggleRefineSearch" aria-expanded="false" aria-controls="refineSearchPanel"><%= I18n.t('actions.refine_search') %></button>
+      <div class="btn btn-group pull-right">
+        <%= link_to I18n.t('actions.new_search'), (defined?(@new_search) ? @new_search : root_path), :class => "btn btn-sm btn--default" %>
+        <button class="btn btn-sm btn--default" id="toggleRefineSearch" aria-expanded="false" aria-controls="refineSearchPanel"><%= I18n.t('actions.refine_search') %></button>
       </div>
 
       <% if defined?(@search) %>
@@ -55,43 +55,38 @@
 
 <% if defined?(@results) %>
 <div class="row">
-    <div id="filter-sidebar" class="col-sm-3">
-        <a name="filter" title="<%= t('internal_links.filter') %>"></a>
-        <%= render partial: 'shared/facets' %>
+  <div class="col-sm-9">
+    <a name="main" title="<%= t('internal_links.main') %>"></a>
+        <h2 class="search-results"><%= t('search_results.results_head', :type => results_type, :start => @results['offset_first'],
+                :end => @results['offset_last'], :total => @results['total_hits'] )  %></h2>
+    <div class="row my-3">
+      <div class="w-100 px-bs d-flex flex-wrap justify-content-end gap-2">
+        <% unless @pager.last_page == 1 %>
+          <div class="flex-grow-1">
+            <%= render partial: 'shared/pagination', locals: {:pager  => @pager}  %>
+          </div>
+        <% end %>
+        <div>
+          <%= render partial: 'shared/sorter' %>
+        </div>
+      </div>
     </div>
+    <div class="row search-results"><div class="col-sm-12">
 
-    <div class="col-sm-9">
-        <a name="main" title="<%= t('internal_links.main') %>"></a>
-        <div class="row my-3">
-        <div class="w-100 px-bs d-flex flex-wrap justify-content-end gap-2">
-            <div class="flex-grow-1" id="pagination-search">
-                <% unless @pager.last_page == 1 %>
-                    <%= render partial: 'shared/pagination', locals: {:pager  => @pager}  %>
-                <% end %>
-                <% if defined?(@results) %>
-                    <h3><%= t('search_results.results_head', {:type => results_type, :start => @results['offset_first'],
-                    :end => @results['offset_last'], :total => @results['total_hits'] })  %></h3>
-                <% end %>
-            </div>
-            <div>
-            <%= render partial: 'shared/sorter' %>
-            </div>
-        </div>
-        </div>
-        <div class="row search-results">
-            <div class="col-sm-12">
-                <a name="searchresults" id="searchresults"></a>
+    <a name="searchresults" id="searchresults"></a>
 
-                <% @results.records.each do |result| %>
-                    <%= render partial: 'shared/result', locals: {:result => result, :props => (@result_props || {}).merge({:full => false})} %>
-                <% end %>
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-sm-12" id="pagination-bottom">
-                <%= render partial: 'shared/pagination', locals: {:pager  => @pager, :pager_id => 'paging_bottom'}  %>
-            </div>
-        </div>
-    </div>
+    <% @results.records.each do |result| %>
+      <%= render partial: 'shared/result', locals: {:result => result, :props => (@result_props || {}).merge({:full => false})} %>
+    <% end %>
+    </div></div>
+    <div class="row mt-2"><div class="col-sm-12">
+    <%= render partial: 'shared/pagination', locals: {:pager  => @pager, :pager_id => 'paging_bottom'}  %>
+    </div></div>
+  </div>
+  <div id="filter-sidebar" class="col-sm-3">
+    <a name="filter" title="<%= t('internal_links.filter') %>"></a>
+    <%= render partial: 'shared/facets' %>
+  </div>
+
 </div>
 <% end %>
